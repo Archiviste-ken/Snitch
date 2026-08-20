@@ -1,8 +1,13 @@
-import express, { Request, Response } from "express";
-import morgan from 'morgan';
+import express from "express";
 
+const app = express();
 
-const app = express()
+app.use(express.json());
 
-app.use(express.json())
+app.get("/", (req, res) => {
+  res.json({
+    message: "RUNNING!!"
+  });
+});
 
+export default app;
