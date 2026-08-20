@@ -1,5 +1,9 @@
 import "dotenv/config";
 
+if(!process.env.MONGO_URI){
+  throw new Error("MONGO_URI is not defined in environment variable!!")
+}
+
 const config = {
   PORT: Number(process.env.PORT) || 3000,
   MONGO_URI: process.env.MONGO_URI || "",
